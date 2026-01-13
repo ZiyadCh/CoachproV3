@@ -6,7 +6,7 @@ class Database{
   private $db;
   private $password;
 
-  protected function connect(){
+  private function connect(){
 
     try {
     	$dsn = "pgsql:host=$host;dbname=$db;";
@@ -24,6 +24,10 @@ class Database{
     		$pdo = null;
     	  }
     } 
+  }
+
+  public function query(){
+
   }
 
 }
