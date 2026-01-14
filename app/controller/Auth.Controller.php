@@ -1,7 +1,7 @@
 <?php
 
 class AuthController extends Controller{
-  public function say(){
+  public function index(){
     $this->view("");
   }
 }

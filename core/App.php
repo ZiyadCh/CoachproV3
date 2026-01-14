@@ -2,9 +2,9 @@
 class App
 {
   private $controller = 'Home';
-  private $method = 'say';
+  private $method = 'index';
 
-  public function load()
+  public function load() :void
   {
 
     $URL = explode("/", $_GET['url'] ?? 'home');

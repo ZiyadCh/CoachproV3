@@ -1,12 +1,13 @@
 <?php 
 
+
 class Database{
   private $host = 'localhost';
   private $user = 'coachpro';
   private $db = 'coachprov3';
   private $password = '1234';
 
-  private function connect(){
+  private function connect() :PDO {
 
     try {
     	$dsn = "pgsql:host=$this->host;dbname=$this->db;";
@@ -14,7 +15,6 @@ class Database{
     	$pdo = new PDO($dsn, $this->user, $this->password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
     	if ($pdo) {
-    		echo "Connected to the  database successfully!";
          return $pdo;
     	}
 
@@ -25,10 +25,17 @@ class Database{
   }
 
   public function query($query,$data = []){
-
     $con = $this->connect();
     $stm = $con->prepare($query);
-    $stm->execute($data);
+    $check = $stm->execute($data);
+    if ($check) {
+      $result = $stm->fetchAll(PDO::FETCH_ASSOC); 
+      if (is_array($result) && count($result)) {
+        return $result;
+      }
+    }
+    //tableau ykon 3amr or else
+    return false;
 
   }
 }
