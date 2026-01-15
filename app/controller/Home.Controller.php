@@ -5,7 +5,7 @@ class Home extends Controller{
     //instanciating model that USES database trait
     $arr = [];
     $arr['id'] = '3';
-    echo "index";
+    echo esc("home");
     //$mod->delete($arr);
     $this->view("home");
   }

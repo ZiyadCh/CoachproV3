@@ -9,7 +9,11 @@ class Auth extends Controller{
     $arr['nom'] = 'ziyad';
     $arr['prenom'] = 'ziyad';
     $arr['role'] = 'coach';
-    $user->insert($arr);
-    $this->view("home");
+    //$user->insert($arr);
+    $this->view("auth/login");
+  }
+  public function register():void{
+    $this->view("auth/register");
+    
   }
 }

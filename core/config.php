@@ -1,6 +1,6 @@
 <?php 
 
-//to add before the src of a js or img or css
+//to add before a link or an href
 define('ROOT', 'http://localhost/CoachproV3/public');
 //define('ROOT', 'http://www.hostedwebsire.com');
 //ffff

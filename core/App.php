@@ -8,6 +8,7 @@ class App
   {
 
     //slect method
+    //the method name being the first / in the url after public
     $URL = explode("/", $_GET['url'] ?? 'home');
     $filename = "../app/controller/" . ucfirst($URL[0]) . ".Controller.php";
     if (file_exists($filename)) {
@@ -21,6 +22,7 @@ class App
     //instance controller
     $controller =  new $this->controller;
     //select method 
+    //the method name being the second / in the url
     if (!empty($URL[1])) {
       if (method_exists($controller,$URL[1])) {
         $this->method = $URL[1];
