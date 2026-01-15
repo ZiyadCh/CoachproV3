@@ -1,16 +1,15 @@
 <?php
 
 class Auth extends Controller{
-  public function index(){
-    //instanciating model that USES database trait
-    $mod = new Model;
+  public function index():void{
+    // models/user.php uses the trait Model
+    //model that USES database trait
+    $user = new User;
     $arr = [];
     $arr['nom'] = 'ziyad';
     $arr['prenom'] = 'ziyad';
     $arr['role'] = 'coach';
-    $arr['email'] = 'ziyad';
-    $arr['prenom'] = 'ziyad';
-    $mod->insert($arr);
+    $user->insert($arr);
     $this->view("home");
   }
 }

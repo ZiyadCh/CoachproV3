@@ -1,11 +1,8 @@
 <?php
 
-class Model {
-
-  protected $table = "users";
+trait Model {
 
   use Database;
-
   //cruds
   public function insert($data):void {
     $keys = array_keys($data);

@@ -1,12 +1,13 @@
 <?php
 class App
 {
-  private $controller = 'Home';
-  private $method = 'index';
+  private $controller = '';
+  private $method = '';
 
   public function load() :void
   {
 
+    //slect method
     $URL = explode("/", $_GET['url'] ?? 'home');
     $filename = "../app/controller/" . ucfirst($URL[0]) . ".Controller.php";
     if (file_exists($filename)) {
@@ -17,7 +18,14 @@ class App
       require $filename;
       $this->controller = "_404";
     }
+    //instance controller
     $controller =  new $this->controller;
+    //select method 
+    if (!empty($URL[1])) {
+      if (method_exists($controller,$URL[1])) {
+        $this->method = $URL[1];
+      }
+    }
     call_user_func_array([$controller, $this->method], []);
   }
 }

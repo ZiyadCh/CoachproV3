@@ -3,10 +3,15 @@
 class Home extends Controller{
   public function index():void{
     //instanciating model that USES database trait
-    $mod = new Model;
     $arr = [];
     $arr['id'] = '3';
-    $mod->delete($arr);
+    echo "index";
+    //$mod->delete($arr);
+    $this->view("home");
+  }
+
+  public function edit():void{
+    echo "edit";
     $this->view("home");
   }
 }
