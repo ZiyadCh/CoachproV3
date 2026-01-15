@@ -1,7 +1,7 @@
 <?php 
 
 
-class Database{
+trait Database{
   private $host = 'localhost';
   private $user = 'coachpro';
   private $db = 'coachprov3';
@@ -24,7 +24,7 @@ class Database{
 
   }
 
-  public function query($query,$data = []){
+  public function query($query,$data = []):array|bool{
     $con = $this->connect();
     $stm = $con->prepare($query);
     $check = $stm->execute($data);
@@ -34,7 +34,7 @@ class Database{
         return $result;
       }
     }
-    //tableau ykon 3amr or else
+    //it also returns false if table is empty
     return false;
 
   }
