@@ -10,7 +10,6 @@ trait Model {
   public function insert($data):void {
     $keys = array_keys($data);
     $query = "insert into $this->table (".implode(",",$keys).") values(:".implode(",:",$keys).")";
-    echo $query;
     $this->query($query,$data);
   }
 
@@ -34,6 +33,5 @@ trait Model {
   public function delete($data):void {
     $query = "delete from $this->table where id = :id";
     $this->query($query,$data);
-    echo $query;
   }
 }

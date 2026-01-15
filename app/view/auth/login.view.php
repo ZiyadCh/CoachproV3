@@ -61,7 +61,7 @@
 
                 <div class="text-center">
                     <p>Premiere Fois ? 
-                        <a href="register" class="text-sport fw-bold">Inscription</a>
+                        <a href="../Register/register" class="text-sport fw-bold">Inscription</a>
                     </p>
 <a href="<?=ROOT?>" class="text-sport fw-bold">retourner</a>
                 </div>

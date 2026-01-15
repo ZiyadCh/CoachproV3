@@ -1,8 +1,8 @@
 <?php
 class App
 {
-  private $controller = '';
-  private $method = '';
+  private $controller = 'home';
+  private $method = 'index';
 
   public function load() :void
   {

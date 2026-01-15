@@ -42,7 +42,7 @@
                 <h3 class="fw-bold">Inscrivez-vous sur <span class="text-sport">CoachPro</span></h3>
                 <p class="text-muted">Créez votre compte pour commencer</p>
             </div>
-            <form action="./register.sportif.php" method="POST" id="registerForm">
+            <form  method="POST" id="registerForm">
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom</label>
                     <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
@@ -59,22 +59,26 @@
                     <label for="password" class="form-label">Mot de passe</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required>
                 </div>
+                
                 <div class="mb-3">
                     <label for="confirm_password" class="form-label">Confirmer le mot de passe</label>
                     <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="••••••••" required>
+                </div>
+            <div class="mb-3">
+                    <label for="" class="form-label">Role</label>
+            <select name = "role">
+            <option>sportif</option>
+            <option>coach</option>
+            </select>
                 </div>
                 <button type="submit" name="submit" class="btn btn-success btn-register w-100 fw-bold">S'inscrire</button>
                 <hr class="my-4">
                 <div class="text-center">
                     <p>Déjà un compte ?
-                        <a href="./login.php" class="text-sport fw-bold">Se connecter</a>
+                        <a href="../login/index" class="text-sport fw-bold">Se connecter</a>
                     </p>
                 </div>
-                <div class="text-center">
-                    <p>Vous etes coach ?
-                        <a href="./register.coach.php" class="text-sport fw-bold">S'inscrire tant que coach</a>
-                    </p>
-                </div>
+                
             </form>
         </div>
     </div>
