@@ -7,8 +7,6 @@ class Coach  extends Controller {
 
     $this->view("coach/Dashboard");
   }
-  public function insertUerId(){
-  }
 
 }
 

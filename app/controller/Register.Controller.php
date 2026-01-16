@@ -14,17 +14,16 @@ class Register extends Controller{
      //insert role id
      switch ($_POST['role']) {
       case 'coach':
-          //$coach = new Coach;
-          //$coach->insertUerId();
+          $coach = new Coach($user->id);
+          $coach->insertUserId();
         break;
       case 'sportif':
-          //$sportif = new Sportif;
-          //$sportif->insertUerId();
+          $sportif = new Sportif($user->id);
+          $sportif->insertUserId();
         break;
       }
         //redirect to login
-      //$this->view("auth/login");
-      print_r($user->id);
+      $this->view("auth/login");
     }
   }
 }
