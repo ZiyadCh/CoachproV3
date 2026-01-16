@@ -23,7 +23,7 @@ class Login extends Controller
           $_SESSION['id'] = $row['id'];
           $_SESSION['nom'] = $row['nom'];
           $_SESSION['prenom'] = $row['prenom'];
-          $this->view("/sportif/Dashboard");
+          $this->view("sportif/Dashboard");
           //refirect
         } elseif ($row['role'] == 'coach') {
           //sesion

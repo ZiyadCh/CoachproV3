@@ -1,6 +1,7 @@
 <?php
 
 
+
 trait Database
 {
   private $host = 'localhost';

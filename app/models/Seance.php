@@ -26,4 +26,14 @@ class Seance{
         }
         return null;
     }
+  public function ajouter(){
+
+    $arr = [];
+    $arr['date'];
+    $arr['heure'];
+    $arr['duree'];
+    $arr['statut'];
+
+    $this->insert($arr);
+  }
 }

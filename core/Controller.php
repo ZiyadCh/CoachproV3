@@ -12,6 +12,6 @@ class Controller
     } else {
       $filename = "../app/view/404.view.php";
       require $filename;
-    }
+    } 
   }
 }

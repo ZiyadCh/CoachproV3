@@ -55,7 +55,7 @@
                 <div class="card shadow mb-5">
                     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Mes Séances</h5>
-                        <a href="./create.seance.php" class="btn btn-light btn-sm">
+                        <a href="../../SeanceC/index" class="btn btn-light btn-sm">
                             <i class="fas fa-plus me-2"></i>Ajouter une séance
                         </a>
                     </div>
