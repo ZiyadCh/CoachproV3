@@ -14,12 +14,7 @@ class User
   protected $passwordHash;
 
   protected $table = "users";
-  //protected $columns = [
-  // 'nom',
-  // 'prenom',
-  // 'email',
-  // 'role',
-  //];
+  //getter
   public function __get($property)
     {
         if (property_exists($this, $property)) {
@@ -54,10 +49,7 @@ class User
       $arr = [];
       $arr['email'] = $email;
      $row = $this->whereEmail($arr);
-          return $row;
-      //////////////////////////////////////
-      //
-      //
+      return $row;
     }
   }
 
