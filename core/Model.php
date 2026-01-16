@@ -15,17 +15,21 @@ trait Model
     return  $this->query('insert',$query, $data);
   }
 
-  //trouver donne
-  public function where($data): array|bool
+  //get by id
+  public function whereId($data): array|bool
   {
     $query = "select * from $this->table where id = :id";
-    $res =  $this->query($query, $data);
-    //exemple affichage
-    //echo $res[0]['nom'] ;
-    //echo $res[0]['prenom'] ;
-    //echo $res[0]['id'] ;
+    $res =  $this->query('fetch',$query, $data);
     //return
-    return $res;
+    return $res[0];
+  }
+  //get by email
+  public function whereEmail($data)
+  {
+    $query = "select * from $this->table where email = :email";
+    $res =  $this->query('fetch',$query, $data);
+    //return
+    return $res[0];
   }
 
   //update donne

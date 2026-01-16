@@ -41,4 +41,17 @@ class User
 
     $this->id = $this->insert($arr);
   }
+
+  public function login($email,$password){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $arr = [];
+      $arr['email'] = $email;
+     $row = $this->whereEmail($arr);
+          return $row;
+      //////////////////////////////////////
+      //
+      //
+    }
+  }
+
 }
