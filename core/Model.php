@@ -1,22 +1,25 @@
 <?php
 
-trait Model {
+trait Model
+{
 
   use Database;
 
   //cruds
   //
   //inserer donne
-  public function insertData($data){
+  public function insert($data)
+  {
     $keys = array_keys($data);
-    $query = "insert into $this->table (".implode(",",$keys).") values(:".implode(",:",$keys).")";
-   return  $this->insert($query,$data);
+    $query = "insert into $this->table (" . implode(",", $keys) . ") values(:" . implode(",:", $keys) . ")";
+    return  $this->query('insert',$query, $data);
   }
 
   //trouver donne
-  public function where($data):array|bool {
+  public function where($data): array|bool
+  {
     $query = "select * from $this->table where id = :id";
-    $res=  $this->query($query,$data);
+    $res =  $this->query($query, $data);
     //exemple affichage
     //echo $res[0]['nom'] ;
     //echo $res[0]['prenom'] ;
@@ -26,12 +29,11 @@ trait Model {
   }
 
   //update donne
-  public function update():void {
-
-  }
+  public function update(): void {}
   //supprimer donne
-  public function delete($data):void {
+  public function delete($data): void
+  {
     $query = "delete from $this->table where id = :id";
-    $this->query($query,$data);
+    $this->query($query, $data);
   }
 }
