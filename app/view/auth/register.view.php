@@ -42,7 +42,8 @@
                 <h3 class="fw-bold">Inscrivez-vous sur <span class="text-sport">CoachPro</span></h3>
                 <p class="text-muted">Créez votre compte pour commencer</p>
             </div>
-            <form  method="POST" id="registerForm">
+      
+            <form action="register" method="POST" id="registerForm">
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom</label>
                     <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
@@ -66,9 +67,9 @@
                 </div>
             <div class="mb-3">
                     <label for="" class="form-label">Role</label>
-            <select name = "role">
-            <option>sportif</option>
-            <option>coach</option>
+            <select name="role">
+            <option value="sportif">sportif</option>
+            <option value="coach">coach</option>
             </select>
                 </div>
                 <button type="submit" name="submit" class="btn btn-success btn-register w-100 fw-bold">S'inscrire</button>

@@ -7,10 +7,10 @@ trait Model {
   //cruds
   //
   //inserer donne
-  public function insert($data):void {
+  public function insertData($data){
     $keys = array_keys($data);
     $query = "insert into $this->table (".implode(",",$keys).") values(:".implode(",:",$keys).")";
-    $this->query($query,$data);
+   return  $this->insert($query,$data);
   }
 
   //trouver donne
