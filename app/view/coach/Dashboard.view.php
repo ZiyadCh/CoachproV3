@@ -71,7 +71,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  <?php $seance->showDisponibleCoach(); ?>
+                    <--! !--></-->
                                 </tbody>
                             </table>
                         </div>

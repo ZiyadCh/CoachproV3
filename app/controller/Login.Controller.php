@@ -23,32 +23,20 @@ class Login extends Controller
           $_SESSION['id'] = $row['id'];
           $_SESSION['nom'] = $row['nom'];
           $_SESSION['prenom'] = $row['prenom'];
-          $this->view("sportif/dashboard");
+          $this->view("/sportif/Dashboard");
           //refirect
         } elseif ($row['role'] == 'coach') {
           //sesion
           $_SESSION['id'] = $row['id'];
           $_SESSION['nom'] = $row['nom'];
           $_SESSION['prenom'] = $row['prenom'];
-          $this->view("coach/dashboard");
+          $this->view("/coach/Dashboard");
           //   header("location: ../pages/dashboard.coach.php");
         }
       } else {
         echo "not";
 
       }
-      //
-      //
-      //insert role id
-      switch ($row['role']) {
-        case 'coach':
-          echo "coach";
-          break;
-        case 'sportif':
-          //sportif
-          break;
-      }
-      //redirect to page
     }
   }
 }

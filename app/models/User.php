@@ -6,7 +6,7 @@ class User
   //using model from ../core/Models.php
   use Model;
 
-  public $id;
+  protected   $id;
   protected $nom;
   protected $prenom;
   protected $email;
@@ -20,6 +20,13 @@ class User
   // 'email',
   // 'role',
   //];
+  public function __get($property)
+    {
+        if (property_exists($this, $property)) {
+            return $this->$property;
+        }
+        return null;
+    }
 
   public function __construct($nom, $prenom, $role, $email, $password)
   {
@@ -37,7 +44,7 @@ class User
     $arr['prenom']   = $this->prenom;
     $arr['role']     = $this->role;
     $arr['email']    = $this->email;
-    $arr['password'] = password_hash($this->password, PASSWORD_DEFAULT);
+    $arr['password'] = password_hash($this->passwordHash, PASSWORD_DEFAULT);
 
     $this->id = $this->insert($arr);
   }
